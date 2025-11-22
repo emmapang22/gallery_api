@@ -8,7 +8,27 @@
     <link href="/src/tailwind.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <form id="form" class="bg-red-800 p-5 rounded">
+        <h1 class="text-white text-2xl mb-3">
+          Search the art collection from Met Museum
+        </h1>
+        <input
+          type="text"
+          name="text"
+          id="searchArtwork"
+          placeholder="Search here"
+          class="bg-white rounded text-amber-950 py-1 px-2"
+        />
+        <button
+          type="submit"
+          class="bg-red-100 py-1 px-2 text-black rounded hover:cursor-pointer hover:bg-red-300"
+        >
+          Submit
+        </button>
+      </form>
+      <section id="artworksSection"></section>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
