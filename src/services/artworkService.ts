@@ -15,5 +15,5 @@ export const getArtworks = async (searchArtwork: string) => {
 export const getArtworkDetails = async (objectID: number) => {
   const response = await get<Artwork>(`${BASE_URL}objects/${objectID}`);
 
-  return response;
+  return response.objectID;
 };
