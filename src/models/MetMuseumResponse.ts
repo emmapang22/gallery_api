@@ -4,7 +4,7 @@ export type Search = {
 
 export type Artwork = {
   objectID: number;
-  primaryImage: string;
+  primaryImageSmall: string;
   objectName: string;
   title: string;
   period: string;

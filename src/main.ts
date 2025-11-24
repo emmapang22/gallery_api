@@ -18,6 +18,7 @@ document.getElementById("form")?.addEventListener("submit", async (e) => {
   }
 
   const artworks = await getArtworks(searchArtwork);
+
   if (!artworks) {
     showError("Artworks not found");
     return;

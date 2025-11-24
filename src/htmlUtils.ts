@@ -5,6 +5,7 @@ export const createHtml = (artworks: Artwork[]) => {
 
   if (artSection) {
     artSection.innerHTML = "";
+    artSection.className = "flex flex-wrap";
   }
 
   artworks.forEach((artwork) => {
@@ -13,18 +14,23 @@ export const createHtml = (artworks: Artwork[]) => {
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
     const artist = document.createElement("p");
+    const medium = document.createElement("p");
 
     title.innerHTML = artwork.title;
-    img.src = artwork.primaryImage;
+    title.className = "text-3xl";
+    img.src = artwork.primaryImageSmall;
     img.alt = artwork.title;
     imgContainer.className = "imgContainer";
-    artist.innerHTML = "Created by: " + artwork.artistDisplayName;
+    artist.innerHTML =
+      "Created by: " + (artwork.artistDisplayName || "Unknown");
+    medium.innerHTML = "Medium: " + (artwork.medium || "Unspecified");
 
     artSection?.appendChild(artContainer);
     artContainer.appendChild(title);
     artContainer.appendChild(imgContainer);
     imgContainer.appendChild(img);
     artContainer.appendChild(artist);
+    artContainer.appendChild(medium);
   });
 };
 
@@ -37,6 +43,7 @@ export const showError = (message: string) => {
 
   const errorText = document.createElement("p");
 
+  errorText.className = "text-red-500 text-center mt-4 text-lg";
   errorText.innerHTML = message;
 
   artSection?.appendChild(errorText);
