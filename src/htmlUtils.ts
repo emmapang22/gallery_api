@@ -5,7 +5,6 @@ export const createHtml = (artworks: Artwork[]) => {
 
   if (artSection) {
     artSection.innerHTML = "";
-    artSection.className = "flex flex-wrap";
   }
 
   artworks.forEach((artwork) => {
@@ -16,13 +15,13 @@ export const createHtml = (artworks: Artwork[]) => {
     const artist = document.createElement("p");
     const medium = document.createElement("p");
 
+    artContainer.className = "artContainer rounded";
     title.innerHTML = artwork.title;
     title.className = "text-3xl";
     img.src = artwork.primaryImageSmall;
     img.alt = artwork.title;
     imgContainer.className = "imgContainer";
-    artist.innerHTML =
-      "Created by: " + (artwork.artistDisplayName || "Unknown");
+    artist.innerHTML = "Artist: " + (artwork.artistDisplayName || "Unknown");
     medium.innerHTML = "Medium: " + (artwork.medium || "Unspecified");
 
     artSection?.appendChild(artContainer);

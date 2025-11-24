@@ -28,6 +28,21 @@ body {
   text-align: center;
 }
 
+.imgContainer {
+  width: 350px;
+}
+
+.artContainer {
+  width: 500px;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  border: rgb(226, 226, 226) solid 1px;
+  background-color: #474747;
+  padding: 1rem;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
