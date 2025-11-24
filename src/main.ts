@@ -19,6 +19,7 @@ document.getElementById("form")?.addEventListener("submit", async (e) => {
 
   const artworks = await getArtworks(searchArtwork);
 
+  // if there's no artworks show text and return null
   if (!artworks) {
     showError("Artworks not found");
     return;
