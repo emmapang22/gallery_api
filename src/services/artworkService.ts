@@ -6,7 +6,7 @@ const BASE_URL = "https://collectionapi.metmuseum.org/public/collection/v1/";
 
 export const getArtworks = async (searchTerm: string) => {
   const response = await get<Search>(
-    `${BASE_URL}search?q=${encodeURIComponent(searchTerm)}`
+    `${BASE_URL}search?q=${encodeURIComponent(searchTerm)}`,
   );
 
   if (!response.objectIDs) {
@@ -28,7 +28,6 @@ export const getArtworks = async (searchTerm: string) => {
     }
   }
 
-  // if no artworks with images were found, return null
   if (!artworks) {
     return null;
   }

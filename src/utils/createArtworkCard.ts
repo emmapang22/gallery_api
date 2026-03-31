@@ -1,6 +1,6 @@
-import type { Artwork } from "./models/MetMuseumResponse";
+import type { Artwork } from "../models/MetMuseumResponse";
 
-export const createHtml = (artworks: Artwork[]) => {
+export const createArtworkCard = (artworks: Artwork[]) => {
   const artSection = document.getElementById("artSection");
 
   if (artSection) {
@@ -31,19 +31,4 @@ export const createHtml = (artworks: Artwork[]) => {
     artContainer.appendChild(artist);
     artContainer.appendChild(medium);
   });
-};
-
-export const showError = (message: string) => {
-  const artSection = document.getElementById("artSection");
-
-  if (artSection) {
-    artSection.innerHTML = "";
-  }
-
-  const errorText = document.createElement("p");
-
-  errorText.className = "text-red-500 text-center mt-4 text-lg";
-  errorText.innerHTML = message;
-
-  artSection?.appendChild(errorText);
 };
