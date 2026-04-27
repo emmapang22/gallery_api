@@ -1,16 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gallery_api</title>
+    <title>Met Museum API</title>
     <link href="/src/tailwind.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="app">
       <form id="form" class="bg-red-800 p-5 rounded">
-        <h1 class="text-white text-2xl mb-3">
+        <h1 class="text-white text-2xl mb-3 font-serif font-medium">
           Search the art collection from Met Museum
         </h1>
 
@@ -32,7 +38,7 @@
 
       <section
         id="artSection"
-        class="flex flex-wrap gap-4 justify-center mt-3"
+        class="flex flex-wrap gap-6 mt-3 w-full"
       ></section>
     </div>
     <script type="module" src="/src/main.ts"></script>

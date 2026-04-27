@@ -1,6 +1,6 @@
+import "./style.css";
 import { showError } from "./utils/createErrorMsg";
 import { getArtworks } from "./services/artworkService";
-import "./style.css";
 import { createArtworkCard } from "./utils/createArtworkCard";
 
 document.getElementById("form")?.addEventListener("submit", async (e) => {
@@ -17,8 +17,7 @@ document.getElementById("form")?.addEventListener("submit", async (e) => {
   const artworks = await getArtworks(searchArtwork);
 
   if (!artworks) {
-    showError("Artworks not found");
-    return;
+    return showError("Artworks not found");
   }
 
   createArtworkCard(artworks);
