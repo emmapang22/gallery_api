@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Met Museum API</title>
+    <title>The Met Gallery</title>
     <link href="/src/tailwind.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,33 +14,54 @@
     />
   </head>
   <body>
-    <div id="app">
-      <form id="form" class="bg-red-800 p-5 rounded">
-        <h1 class="text-white text-2xl mb-3 font-serif font-medium">
-          Search the art collection from Met Museum
-        </h1>
+    <header
+      class="text-center w-full bg-red-800 flex flex-col lg:flex-row gap-2 items-center p-5 lg:relative"
+    >
+      <a href="/">
+        <h1 class="text-white text-xl font-serif font-medium">
+          The Met Gallery
+        </h1></a
+      >
+
+      <form
+        id="form"
+        class="flex flex-col gap-2 lg:flex-row lg:items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+      >
+        <label for="searchArtwork" class="text-white font-medium">
+          Search artworks:</label
+        >
 
         <input
           type="text"
           name="text"
           id="searchArtwork"
-          placeholder="Search here"
-          class="bg-white rounded text-amber-950 py-1 px-2"
+          placeholder="ex. art by vincent van gogh"
+          class="bg-white rounded text-amber-950 py-1 px-2 w-64 lg:w-80"
         />
 
         <button
-          type="submit"
-          class="bg-red-100 py-1 px-2 text-black rounded hover:cursor-pointer hover:bg-red-300"
+          class="bg-red-950 text-white font-medium py-1 lg:px-2 rounded hover:cursor-pointer hover:bg-gray-100 hover:text-black"
         >
           Submit
         </button>
       </form>
+    </header>
 
-      <section
-        id="artSection"
-        class="flex flex-wrap gap-6 mt-3 w-full"
-      ></section>
-    </div>
+    <main id="app" class="px-4 py-6 max-w-7xl">
+      <section id="artSection" class="grid grid-cols-12 gap-6 gap-y-10 w-full">
+        <div
+          class="col-span-12 flex flex-col items-center gap-4 mt-40 lg:mt-60"
+        >
+          <h2
+            class="text-3xl lg:text-5xl text-center font-bold text-red-950 font-serif"
+          >
+            Explore the art collection from The Met Museum
+          </h2>
+          <span class="text-7xl">🖼️ 🔍</span>
+        </div>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
