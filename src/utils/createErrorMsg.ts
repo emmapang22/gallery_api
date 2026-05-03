@@ -7,8 +7,9 @@ export const showError = (message: string) => {
 
   const errorText = document.createElement("p");
 
-  errorText.className = "text-red-500 text-center mt-4 text-lg";
-  errorText.innerHTML = message;
+  errorText.className =
+    "text-red-500 text-center font-medium mt-4 text-lg col-span-12";
+  errorText.textContent = message;
 
   artSection?.appendChild(errorText);
 };
