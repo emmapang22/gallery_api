@@ -2,7 +2,7 @@ import type { Artwork, Search } from "../models/MetMuseumResponse";
 import { get } from "./serviceBase";
 
 const BASE_URL = "https://collectionapi.metmuseum.org/public/collection/v1/";
-const MAX_ARTWORKS = 50;
+const MAX_ARTWORKS = 25;
 
 export const getArtworks = async (searchTerm: string): Promise<Artwork[]> => {
   if (!searchTerm.trim()) {

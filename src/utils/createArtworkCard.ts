@@ -1,4 +1,5 @@
 import type { Artwork } from "../models/MetMuseumResponse";
+import { showArtworkInfo } from "./showArtworkInfo";
 
 export const createArtworkCard = (artworks: Artwork[]) => {
   const artSection = document.getElementById("artSection");
@@ -24,7 +25,12 @@ export const createArtworkCard = (artworks: Artwork[]) => {
     artContainer.className =
       "artContainer flex flex-col gap-4 bg-neutral-50 border-[0.75rem] border-yellow-600 px-4 py-6";
     imgContainer.className =
-      "imgContainer w-full max-h-60 flex items-center justify-center";
+      "imgContainer w-full max-h-60 flex items-center justify-center hover:cursor-pointer";
+    imgContainer.addEventListener("click", () => {
+      showArtworkInfo(artwork);
+      console.log(artwork);
+    });
+
     img.src = artwork.primaryImageSmall;
     img.alt = artwork.title;
     img.className = "w-auto h-full";
@@ -32,7 +38,11 @@ export const createArtworkCard = (artworks: Artwork[]) => {
     artInfo.className =
       "flex flex-col gap-2 bg-white border-neutral-500 border-2 text-black py-6 px-4";
     title.innerHTML = artwork.title;
-    title.className = "text-xl font-bold";
+    title.className =
+      "text-xl font-bold hover:text-amber-700 hover:cursor-pointer";
+    title.addEventListener("click", () => {
+      showArtworkInfo(artwork);
+    });
     artist.innerHTML =
       "<strong>Artist:</strong> " + (artwork.artistDisplayName || "Unknown");
     medium.innerHTML =
